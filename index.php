@@ -63,11 +63,39 @@
     <h3>Popular</h3>
     <div class="borderline"></div>
 
-    <div class="inside-box">
-        <div>
-        <img src="https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Gris_image1600w.jpg" alt="GRIS"class="most-pop"></div>
-        
+    <div class="inside-box popular">
+        <div class="most-pop">
+        <img src="https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Gris_image1600w.jpg" id="gris" alt="GRIS">
         <div class="details-pop">GRIS</div>
+        </div>
+        
+        
+
+        <div class="second-half">
+            <div class="game-details">
+            <img src="https://steamcdn-a.akamaihd.net/steam/apps/782330/header.jpg?t=1583535123" alt="Doom Eternal" class="image-w-title">
+            <div class="details">Doom Eternal</div>
+            </div>
+
+            <div class="game-details">
+            <img src="https://o.aolcdn.com/images/dims?quality=85&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fresize%3D2000%252C2000%252Cshrink%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-uploaded-images%252F2019-06%252Fe9b37c00-8af7-11e9-bf69-fcb449f62030%26client%3Da1acac3e1b3290917d92%26signature%3D063cdd40f3dc57f75d3aa649cb637867b536a267&client=amp-blogside-v2&signature=89ea438c8040e519fe6938cd8e017a4a34222dae" alt="Ori and the Will of the Wisps'" class="image-w-title">
+            <div class="details">Ori and the Will of the Wisps'</div>
+            </div>
+
+            <div class="game-details">
+            <img src="https://cdn.wccftech.com/wp-content/uploads/2020/03/nioh-2-art.jpg" alt="Nioh 2" class="image-w-title">
+            <div class="details">Nioh 2</div>
+            </div>
+
+            <div class="game-details">
+            <img src="https://steamcdn-a.akamaihd.net/steam/apps/952060/header.jpg?t=1583732360" alt="Resident Evil 3" class="image-w-title">
+            <div class="details">Resident Evil 3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="inside-box news">
+        <img src="" alt="">
     </div>
     
 </body>
