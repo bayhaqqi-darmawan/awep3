@@ -163,3 +163,104 @@ h3{
 .popular {
     display: flex;
 }
+
+.square-au{
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 290px;
+    height: 290px;
+    background-color: #1F2833;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#logo-au{
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about-text{
+    font-size: 30px;
+    text-align: center;
+}
+
+.aims-obj{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    width: 1000px;
+    height: 390px;
+    border: 2px solid black;
+    background-color: #45A29E;
+}
+
+.ao-title{
+    text-align: center;
+    font-family: 'Rokkitt', serif;
+    font-weight: 900px;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.ao-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ao-desc{
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+    font-weight: bolder;
+}
+
+.inside-box .aims-obj:nth-child(3){
+    background-color: #C4C4C4;
+}
+
+footer{
+    margin-top: 100px;
+    font-size: 18px;
+}
+
+.sign-inup-container{
+    margin-top: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 530px;
+    height: 550px;
+    background-color: #1F2833;
+    text-align: center;
+}
+
+.logo-signinup{
+    margin-top: 40px;
+    border-radius: 180px;
+    width: 150px;
+    height: 150px;
+}
+
+.input-form{
+    margin-top: 30px;
+    width: 200px;
+    height: 55px;
+}
+
+.form-group .input-form:nth-last-child(1){
+    background-color: #45A29E;
+    color: white;
+}
+
+#signup-css a{
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+}

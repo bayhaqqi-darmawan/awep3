@@ -8,7 +8,7 @@
                     <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="about-us.php">About</a>
                 </li>
                 <li>
                     <a href="#">Community</a>
@@ -17,7 +17,7 @@
 
             <ul class="navlinks">
                 <li>
-                    <a href="#">Sign in</a>
+                    <a href="sign-in.php">Sign in</a>
                 </li>
                 <li>
                     <form class="example" action="action_page.php">
