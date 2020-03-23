@@ -35,8 +35,8 @@
     </div>
 
     
-        <h3>Recommended for you</h3>
-        <div class="borderline"></div>
+    <h3>Recommended for you</h3>
+    <div class="borderline"></div>
     
 
     <div class="inside-box">
@@ -58,6 +58,16 @@
                 <div class="details">Borderlands 3</div>
             </div>
         </div>
+    </div>
+
+    <h3>Popular</h3>
+    <div class="borderline"></div>
+
+    <div class="inside-box">
+        <div>
+        <img src="https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Gris_image1600w.jpg" alt="GRIS"class="most-pop"></div>
+        
+        <div class="details-pop">GRIS</div>
     </div>
     
 </body>
