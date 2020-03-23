@@ -109,6 +109,10 @@ h3{
     margin-top: 50px;
 }
 
+.game-details{
+    margin: 0px;
+}
+
 .image-w-title{
     width: 235px;
     height: 100px;
@@ -125,4 +129,21 @@ h3{
 .games{
     display: flex;
     justify-content: space-around;
+}
+
+.most-pop {
+    height: 350px;
+    width: 50%;
+}
+
+.details-pop{
+    position: relative;
+    margin: 0;
+    background-color: #fff;
+    height: 80px;
+    width: 50%;
+    font-size: 40px;
+    letter-spacing: 10px;
+    text-align: center;
+    line-height: 80px;
 }
