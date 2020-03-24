@@ -98,5 +98,6 @@
         <img src="" alt="">
     </div>
     
+    <?php include 'footer.php'; ?>
 </body>
 </html>
