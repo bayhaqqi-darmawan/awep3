@@ -17,7 +17,7 @@
 
             <ul class="navlinks">
                 <li>
-                    <a href="sign-in.php">Sign in</a>
+                    <a href="signin.php" id="sc">Sign in</a>
                 </li>
                 <li>
                     <form class="example" action="action_page.php">

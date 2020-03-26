@@ -251,12 +251,12 @@ footer{
 }
 
 .input-form{
-    margin-top: 20px;
+    margin-top: 10px;
     width: 200px;
     height: 55px;
 }
 
-.form-group .input-form:nth-last-child(1){
+.sign-inup-container .form-group:nth-last-child(1) .input-form:nth-child(1){
     background-color: #45A29E;
     color: white;
 }
@@ -265,4 +265,8 @@ footer{
     margin-top: 10px;
     text-decoration: none;
     color: white;
+}
+
+#sc {
+    color: #45A29E;
 }
