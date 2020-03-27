@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        $navigation_bar = "nav.php";
+    } else {
+        $nama = $_SESSION["username"];
+        $navigation_bar = "nav-user.php";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rokkitt&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
     <title>About Us</title>
 </head>
 <body>
-    <?php include 'nav.php'; ?>
+    <?php include $navigation_bar; ?>
 
     <div class="square-au">
         <img src="logo.jpg" alt="GameLab Logo" id="logo-au">

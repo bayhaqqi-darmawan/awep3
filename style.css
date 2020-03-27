@@ -24,7 +24,7 @@ nav{
 
 .navlinks{
     display: flex;
-    width: 20%;
+    width: 30%;
     justify-content: space-around;
 }
 
@@ -269,4 +269,159 @@ footer{
 
 #sc {
     color: #45A29E;
+    margin-right: 10px;
+}
+
+#notif {
+    width: 45px;
+    height: 27px;
+    margin-right: 20px;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    border-radius: 10px;
+    margin-right: 20px;
+    border: none;
+    text-align: center;
+    color: black;
+    display: none;
+    position: absolute;
+    width: 160px;
+    height: 100px;
+    padding:5px;
+    z-index: 1
+}
+
+.awal{
+    padding-top: 15px;
+    font-size: 12px;
+    cursor: default;
+    width: 160px;
+    height: 50px;
+    color: #646464;;
+    background-color: #C5C6C7;;
+}
+
+.awal:nth-child(2){
+    color: black;
+    margin-top: -10px;
+    text-decoration: none;
+    width: 160px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.semua{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 10px;
+    display:inline-block;
+}
+
+.akhir{
+    padding-top: 15px;
+    width: 160px;
+    display: inline-block;
+    color: black;
+    background-color: #45A29E;
+    height: 50px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.profile-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.avatar-container {
+    margin-left: 10%;
+    width: 20%;
+    height: 250px;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+}
+
+.profile-username {
+    line-height: 200px;
+    font-weight: bolder;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-right: auto;
+}
+
+.tab {
+    overflow: hidden;
+  }
+
+.tab button{
+    font-size: bold;
+    text-transform: uppercase;
+    justify-content: space-around;
+    width: 20%;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active{
+    font-weight: bolder;
+    border-bottom: 2px solid black;
+}
+
+#feed-avatar{
+    width: 100px;
+    height: 100px;
+}
+
+.status-post{
+    display: flex;
+    margin-top: 15px;
+    width: 1000px;
+    height: 120px;
+    background-color: #0B0C10;
+}
+
+.status-textarea{
+    width: 800px;
+    height: 10px;
+    line-height: 120px;
+}
+
+.act-container{
+    margin-top: 10px;
+    width: 100%;
+    height: 420px;
+    background-color: #1F2833;
 }

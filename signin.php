@@ -4,10 +4,10 @@
 
     session_start();
 
-    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-        header("location: about-us.php");
-        exit;
-    }
+    // if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    //     header("location: about-us.php");
+    //     exit;
+    // }
 
     require_once 'connect.php';
 
@@ -54,7 +54,7 @@
                                 $_SESSION["username"] = $username;                            
                                 
                                 // Redirect user to welcome page
-                                header("location: welcome.php");
+                                header("location: index.php");
                             } else{
                                 // Display an error message if password is not valid
                                 $password_err = "The password you entered was not valid.";
