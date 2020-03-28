@@ -47,17 +47,7 @@
     <h2 class="inside-box">Comments</h2>
     <div class="borderline"></div>
 
-    <?php 
-        $comment = "";
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST"){
-            if (empty($_POST['comment'])){
-                $comment = $comment;
-            } else {
-                $comment = $_POST['comment'];
-            }
-        }
-    ?>
+    <?php include 'comment-logic.php'; ?>
 
     <div class="inside-box comment-container">
         <img src="avatar.png" alt="" class="feed-avatar">
