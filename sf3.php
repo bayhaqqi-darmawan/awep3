@@ -47,6 +47,8 @@
     <h2 class="inside-box">Comments</h2>
     <div class="borderline"></div>
 
+    <?php include 'comment-logic.php'; ?>
+
     <div class="inside-box comment-container">
         <img src="avatar.png" alt="" class="feed-avatar">
             <form action="" method="post">
@@ -56,5 +58,16 @@
                 <input type="submit" name="comment" value="Post Comment" class="button-comment">
             </form>
     </div>
+
+    <div class="inside-box">
+    <div class="show-comment">
+            <img src="avatar.png" alt="" class="feed-avatar">
+            <div class="comment-area comment">
+                <?php echo $nama." posted : ".$comment?>
+            </div>   
+        </div>
+    </div>
+    
+    <?php include 'footer.php'; ?>
     
 </body>

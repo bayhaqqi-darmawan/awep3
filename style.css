@@ -542,3 +542,7 @@ footer{
     height: 50px;
 
 }
+
+.show-comment{
+    display: block;
+}

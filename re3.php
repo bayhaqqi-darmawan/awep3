@@ -47,14 +47,37 @@
     <h2 class="inside-box">Comments</h2>
     <div class="borderline"></div>
 
+    <?php 
+        $comment = "";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            if (empty($_POST['comment'])){
+                $comment = $comment;
+            } else {
+                $comment = $_POST['comment'];
+            }
+        }
+    ?>
+
     <div class="inside-box comment-container">
         <img src="avatar.png" alt="" class="feed-avatar">
-            <form action="" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <div class="comment-area">
                     <textarea name="comment" class="comment" cols="30" rows="10" placeholder="Share a comment.."></textarea>
                 </div>
-                <input type="submit" name="comment" value="Post Comment" class="button-comment">
+                <input type="submit" name="submitComment" value="Post Comment" class="button-comment">
             </form>
+        <br>
+    </div>
+
+    <div class="inside-box">
+    <div class="show-comment">
+            <img src="avatar.png" alt="" class="feed-avatar">
+            <div class="comment-area comment">
+                <?php echo $nama." posted : ".$comment?>
+            </div>   
+        </div>
     </div>
     
+    <?php include 'footer.php'; ?>
 </body>

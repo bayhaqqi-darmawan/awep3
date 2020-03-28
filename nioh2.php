@@ -39,6 +39,8 @@
     <h2 class="inside-box">Image gallery</h2>
     <div class="borderline"></div>
 
+    <?php include 'comment-logic.php'; ?>
+
     <div class="inside-box">
         <img src="https://thumbs.gfycat.com/PointlessBeautifulDarklingbeetle-poster.jpg" alt="" class="image-glry">
         <img src="https://thumbs.gfycat.com/FavoriteHideousFlyingfox-poster.jpg" alt="" class="image-glry">
@@ -58,5 +60,16 @@
                 <input type="submit" name="comment" value="Post Comment" class="button-comment">
             </form>
     </div>
+
+    <div class="inside-box">
+    <div class="show-comment">
+            <img src="avatar.png" alt="" class="feed-avatar">
+            <div class="comment-area comment">
+                <?php echo $nama." posted : ".$comment?>
+            </div>   
+        </div>
+    </div>
+    
+    <?php include 'footer.php'; ?>
     
 </body>

@@ -37,6 +37,18 @@
     <h2 class="inside-box">Image gallery</h2>
     <div class="borderline"></div>
 
+    <?php 
+        $comment = "";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            if (empty($_POST['comment'])){
+                $comment = $comment;
+            } else {
+                $comment = $_POST['comment'];
+            }
+        }
+    ?>
+
     <div class="inside-box">
         <img src="https://i.ytimg.com/vi/P11v6DzAZrE/maxresdefault.jpg" alt="" class="image-glry">
         <img src="https://i.ytimg.com/vi/bJcJnVP08oo/maxresdefault.jpg" alt="" class="image-glry">
@@ -56,5 +68,16 @@
                 <input type="submit" name="comment" value="Post Comment" class="button-comment">
             </form>
     </div>
+
+    <div class="inside-box">
+    <div class="show-comment">
+            <img src="avatar.png" alt="" class="feed-avatar">
+            <div class="comment-area comment">
+                <?php echo $nama." posted : ".$comment?>
+            </div>   
+        </div>
+    </div>
+    
+    <?php include 'footer.php'; ?>
     
 </body>

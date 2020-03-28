@@ -37,6 +37,18 @@
     <h2 class="inside-box">Image gallery</h2>
     <div class="borderline"></div>
 
+    <?php 
+        $comment = "";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            if (empty($_POST['comment'])){
+                $comment = $comment;
+            } else {
+                $comment = $_POST['comment'];
+            }
+        }
+    ?>
+
     <div class="inside-box">
         <img src="https://specials-images.forbesimg.com/imageserve/5e209e67a854780006e8ad90/960x0.jpg?fit=scale" alt="" class="image-glry">
         <img src="https://cdn.player.one/sites/player.one/files/2020/03/02/cyberpunk-2077.jpg" alt="" class="image-glry">
@@ -56,5 +68,16 @@
                 <input type="submit" name="comment" value="Post Comment" class="button-comment">
             </form>
     </div>
+
+    <div class="inside-box">
+    <div class="show-comment">
+            <img src="avatar.png" alt="" class="feed-avatar">
+            <div class="comment-area comment">
+                <?php echo $nama." posted : ".$comment?>
+            </div>   
+        </div>
+    </div>
+    
+    <?php include 'footer.php'; ?>
     
 </body>
