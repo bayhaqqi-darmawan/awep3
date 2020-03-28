@@ -6,6 +6,9 @@ include 'connection.php';
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         $navigation_bar = "nav.php";
+
+        header("location: signin.php");
+        exit;
     } else {
         $nama = $_SESSION["username"];
         $navigation_bar = "nav-user.php";
