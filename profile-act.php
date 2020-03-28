@@ -1,12 +1,94 @@
 <?php
     session_start();
 
+    require_once 'connect.php';
+    $username = "";
+    $aboutyou = "";
+    $location = "";
+    $birthdate = "";
+    $status = "";
+
+
+
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         header("location: signin.php");
         exit;
     } else {
         $nama = $_SESSION["username"];
+
+        $sql = "SELECT id FROM bio WHERE username = :username";
+
+            if ($stmt = $connection->prepare($sql)) {
+                $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
+
+                $param_username = trim($_SESSION['username']);
+
+                if($stmt->execute()){
+                    if($stmt->rowCount() == 1){
+                        unset($stmt);
+                    } else{
+                        $sql = "INSERT INTO bio (username) VALUES (:username)";
+                        $stmt = $connection->prepare($sql);
+                        $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
+
+                        $stmt->execute(['username'=>$nama]);
+                        
+                        unset($stmt);
+                    }
+                } else{
+                    $u_err = "Oops! Something went wrong. Please try again later.";
+                }
+
+                unset($stmt);
+            }
+        
     }
+
+    if (empty($_POST['status'])){
+        $status = "";
+    } else {
+        $status = $_POST['status'];
+    }
+
+    unset($stmt);
+
+    if (empty($aboutyou) || empty($location) || empty($birthdate)){
+        $aboutyou = $aboutyou;
+        $location = $location;
+        $birthdate = $birthdate;
+    } else {
+        $sql = "UPDATE bio SET about='$aboutyou', location='$location', date='$birthdate'";
+        $stmt = $connection->prepare($sql);
+        $stmt->bindParam(':about',$param_aboutyou, PDO::PARAM_STR);
+        $stmt->bindParam(':location',$param_location, PDO::PARAM_STR);
+        $stmt->bindParam(':date',$param_birthdate, PDO::PARAM_STR);
+        $stmt->execute();
+        unset($stmt);
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        if (empty($_POST['aboutyou'])){
+            $aboutyou = "";
+        } else {
+            $aboutyou = $_POST['aboutyou'];
+        }
+        if(empty($_POST['birthdate'])){
+            $birthdate = "";
+        } else {
+            $birthdate = $_POST['birthdate'];
+        }
+        if(empty($_POST['location'])){
+            $location = "";
+        } else {
+            $location = $_POST['location'];
+        }
+    }
+
+    $sql = "SELECT * FROM bio";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    
+    unset($stmt);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,8 +128,19 @@
         <div id="profile-feed" class="tabcontent">
 
             <div class="status-post">
-                <img src="avatar.png" alt="Avatar" id="feed-avatar">
-                <textarea name="post_status" id="status-textarea"></textarea>
+                <img src="avatar.png" alt="Avatar" class="feed-avatar">
+
+                <div id="status-textarea">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <textarea name="status" cols="100" rows="3" placeholder="What's up, <?php echo $nama; ?>?"></textarea>
+                        <input type="submit" name="submitStatus" value="Submit">
+                    </form>
+                </div>
+                
+            </div>
+
+            <div class="show-status">
+                <p><span style="text-transform:uppercase;"><?php echo $nama; ?></span> said, <?php echo $status; ?></p>
             </div>
 
             <div style="margin-top:40px">
@@ -66,19 +159,19 @@
         <div id="profile-about" class="tabcontent">
 
             <div class="about-you-prof">
-                <p class="warna-lain">About you</p>
-                <div>
-                    info
+                <h4 class="warna-lain">About you</h4>
+                <div class="show-info">
+                <?php echo $aboutyou; ?>
                 </div>
 
-                <p class="warna-lain">Location</p>
-                <div>
-                    Brunei Darussalam
+                <h4 class="warna-lain">Location</h4>
+                <div class="show-info">
+                <?php echo $location; ?>
                 </div> 
 
-                <p class="warna-lain">Birth date</p>
-                <div>
-                    dd/mm/yyyy
+                <h4 class="warna-lain">Birth date</h4>
+                <div class="show-info">
+                <?php echo $birthdate; ?>
                 </div>
             </div>
         </div>
@@ -97,22 +190,23 @@
             <div></div>
         </div>
 
+        <?php 
+
+        ?>
+
         <div id="profile-edit" class="tabcontent">
         <div class="about-you-prof">
-                <p class="warna-lain">About you</p>
-                <div>
-                    info
-                </div>
-
-                <p class="warna-lain">Location</p>
-                <div>
-                    Brunei Darussalam
-                </div> 
-
-                <p class="warna-lain">Birth date</p>
-                <div>
-                    dd/mm/yyyy
-                </div>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <p for="" class="warna-lain">About you</p><br>
+                <textarea name="aboutyou" id="" cols="30" rows="10" value="<?php echo $aboutyou; ?>"></textarea><br>
+                <p for="" class="warna-lain">Location</p><br>
+                <input type="text" name="location" value="<?php echo $location; ?>"><br>
+                <p for="" class="warna-lain">Birth Date</p><br>
+                <input type="date" name="birthdate" <?php echo $birthdate; ?>>
+                <br>
+                <input type="submit" name="submitEdit">
+            </form>
+            
             </div>
         </div>
     </div>
@@ -132,9 +226,5 @@
   evt.currentTarget.className += " active";
 }
 </script>
-    
-
-    
-    
 </body>
 </html>

@@ -11,7 +11,7 @@
                     <a href="about-us.php">About</a>
                 </li>
                 <li>
-                    <a href="#">Community</a>
+                    <a href="forum.php">Community</a>
                 </li>
             </ul>
 

@@ -15,7 +15,9 @@ nav{
     align-items: center;
     min-height: 8vh;
     background-color: #1F2833;
+    margin-bottom: 20px;
 }
+
 #limg{
     width: 48px;
     height: 48px;
@@ -129,11 +131,6 @@ h3{
 .games{
     display: flex;
     justify-content: space-around;
-}
-
-.games a{
-    text-decoration: none;
-    color: black;
 }
 
 .most-pop {
@@ -260,8 +257,6 @@ footer{
     width: 200px;
     height: 55px;
 }
-
-
 
 .sign-inup-container .form-group:nth-last-child(1) .input-form:nth-child(1){
     background-color: #45A29E;
@@ -394,11 +389,8 @@ footer{
 .tabcontent {
     display: none;
     padding: 6px 12px;
+    border: 1px solid #ccc;
     border-top: none;
-}
-
-#profile-feed{
-    display: block;
 }
 
 .tab button:hover {
@@ -410,8 +402,7 @@ footer{
     border-bottom: 2px solid black;
 }
 
-.feed-avatar{
-    padding: 15px;
+#feed-avatar{
     width: 100px;
     height: 100px;
 }
@@ -424,10 +415,10 @@ footer{
     background-color: #0B0C10;
 }
 
-#status-textarea{
-    margin-left: 20px;
-    line-height: 150px;
-    z-index: 1;
+.status-textarea{
+    width: 800px;
+    height: 10px;
+    line-height: 120px;
 }
 
 .act-container{
@@ -437,108 +428,65 @@ footer{
     background-color: #1F2833;
 }
 
-.show-status{
-    /* display:none; */
-    margin-top: 30px;
+.content{
+    text-align: center;
+    margin: 20px;
+    margin-left: 5%;
+}
+
+.post-content {
+    padding: 30px;
+}
+
+table {
+    border-collapse: collapse;
     width: 90%;
-    min-height:80px;
-    background-color: #C5C6C7;
-}
-
-.show-status p{
-    padding: 10px;
-    font-size: 20px;
-    color: black;
-
-}
-
-.warna-lain {
-    color: #45A29E;
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 30px;
-}
-
-.show-info{
-    width: 80%;
-    min-height: 40px;
-    background-color: #C5C6C7;
-    border: 2px solid grey;
-}
-
-.game-desc-container {
-    width: 100%;
-    height: 450px;
-    background-color: #1F2833;
-    display: flex;
-    /* justify-content: space-around; */
-    justify-items: center;
+    padding: 30px;
     text-align: center;
 }
-
-.g-img{
-    /* background-color: #000; */
-    width: 630px;
-    height: 300px;
-    margin: 60px 45px;
-    /* line-height: 450px; */
+ 
+table a {
+    color: #000;
+    text-decoration: none;
 }
-
-.description{
-    margin-top: 60px;
-    width: 390px;
-    height: 300px;
-    color: white;
-    text-align: justify;
+ 
+table a:hover {
+    color:#373737;
+    text-decoration: none;
 }
-
-.g-title{
-
-    font-size: 30px;
-    font-weight: 700;
+ 
+th {
+    background-color: #45A29E;
+    color: #F0F0F0;
 }
-.g-desc{
-    word-spacing: 5px;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.image-glry{
-    width: 250px;
-    height: 150px;
-    margin-left: 25px;
-}
-
-.comment-area{
-    width: 1000px;
-    height: 100px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    background-color: #fff;
-    display: inline-flex;
-}
-
-.comment{
-    margin-left: 10px;
-    width: 100%;
-    line-height: 100px;
-    border:none;
-    font-size: 23px;
-    color: grey;
-}
-
-.comment-container {
-    display: flex;
-}
-
-.button-comment{
-    border-radius: 10px;
-    margin-left: auto;
+ 
+td {
+    padding: 5px;
     background-color: #C4C4C4;
-    font-size: 17px;
-    display: block;
-    margin-top: 10px;
-    width: 140px;
-    height: 50px;
+}
 
+.item {
+    background-color: #C4C4C4;
+    border-radius: 3px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+}
+ 
+.leftpart {
+    text-align: left;
+    padding-left: 40px;
+
+}
+ 
+.rightpart {
+
+}
+
+textarea {
+    width: 500px;
+    height: 200px;
 }

@@ -11,7 +11,7 @@
                     <a href="about-us.php">About</a>
                 </li>
                 <li>
-                    <a href="#">Community</a>
+                    <a href="forum.php">Community</a>
                 </li>
             </ul>
 
@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                    <span>'.$nama.'</span>
+                    <span style="cursor:default;">'.$nama.'</span>
                     <div class="dropdown-content">
                     <p class="awal semua" href="#">Your Account</p>
                     <a href="profile-act.php" class="awal semua">'.$nama.'</a>

@@ -38,31 +38,25 @@
                 $param_username = trim($_POST['username']);
 
                 if($stmt->execute()){
-                    // Check if username exists, if yes then verify password
                     if($stmt->rowCount() == 1){
                         if($row = $stmt->fetch()){
                             $id = $row["id"];
                             $username = $row["username"];
                             $hashed_password = $row["password"];
                             if(password_verify($password, $hashed_password)){
-                                // Password is correct, so start a new session
                                 session_start();
                                 
-                                // Store data in session variables
                                 $_SESSION["loggedin"] = true;
                                 $_SESSION["id"] = $id;
                                 $_SESSION["username"] = $username;                            
                                 
-                                // Redirect user to welcome page
                                 header("location: index.php");
                             } else{
-                                // Display an error message if password is not valid
                                 $password_err = "The password you entered was not valid.";
                                 $p_err = $password_err;
                             }
                         }
                     } else{
-                        // Display an error message if username doesn't exist
                         $username_err = "No account found with that username.";
                         $u_err = $username_err;
                     }
@@ -70,7 +64,6 @@
                     $u_err = $p_err = "Oops! Something went wrong. Please try again later.";
                 }
     
-                // Close statement
                 unset($stmt);
 
             }
